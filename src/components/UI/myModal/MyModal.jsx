@@ -1,0 +1,16 @@
+import React from "react";
+
+const MyModal = ({ active, setActive, children }) => {
+  return (
+    <div
+      className={active ? "my__modal active" : "my__modal"}
+      onClick={() => setActive(false)}
+    >
+      <div className={active ? "my__modal__content active" : "my__modal__content"} onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default MyModal;
